@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#mc_embed_signup input{border:1px solid #999;-webkit-appearance:none}#mc_embed_signup input:focus{border-color:#333}#mc_embed_signup .button{clear:both;background-color:#F60;border:0;border-radius:4px;color:#FFF;cursor:pointer;display:inline-block;font-size:15px;font-weight:700;height:32px;line-height:32px;padding:0 22px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap;width:auto;width:100%}#mc_embed_signup .button:hover{background-color:#A64300}#mc_embed_signup .mc-field-group{clear:left;position:relative;padding-bottom:12px;min-height:50px}#mc_embed_signup .mc-field-group input{display:block;width:100%;padding:10px 0;text-indent:2%;margin-top:10px}#mc_embed_signup div.response{margin:1em 0;padding:1em .5em .5em 0;font-weight:700;float:left;top:-1.5em;z-index:1;width:80%}#mc_embed_signup #mce-error-response{display:none}#mc_embed_signup #mce-success-response{color:#529214;display:none}#mc_embed_signup{font-size:1em;position:fixed;bottom:20px;right:20px;width:300px;border-radius:5px;border:1px solid silver;background-color:#FFC173;padding:10px}#mc_embed_signup form{width:100%;display:block;margin-bottom:0}#mc_embed_signup .MCtitle{font-size:130%;font-weight:700;margin-bottom:5px}#mc_embed_signup #closeBtn{float:right;width:20px;height:20px;cursor:pointer}.hiddenMCsignup{display:none}@media (max-width:992px){#mc_embed_signup{width:100%;bottom:0;right:0;border-radius:0;border:0;padding:0}#mc_embed_signup form{padding:10px;width:auto}}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- This is the main div, which holds the entire newsletter signup box -->
+<div id="mc_embed_signup" class="hiddenMCsignup">
+	<!-- This is the form, which sends data to your MailChimp -->
+	<form action="<!-- IMPORTANT - you need to replace this text with your unique MailChimp URL, which you can get from their Subscription menu -->" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<div id="mc_embed_signup_scroll">
+			<span id="closeBtn">&#10006;</span>
+			<!-- Don't forget to change your title and text -->
+			<div class="MCtitle">Your title</div>
+			<div class="mc-field-group">
+				<label for="mce-EMAIL">This is a placeholder text. You want to write your own, something like "Do you like XYZ? Then signup to our newsletter and receive interesting information and news updates about it."</label>
+				<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Please type your e-mail address">
+			</div>
+			<div id="mce-responses" class="clear">
+				<div class="response" id="mce-error-response" style="display:none"></div>
+				<div class="response" id="mce-success-response" style="display:none"></div>
+			</div>
+			<!-- This is antispam measure - do not remove this or risk form bot signups -->
+			<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9f39ef3435e3e1637175511f0_a10401eb95" tabindex="-1" value="" required/></div>
+			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+		</div>
+	</form>
+</div>
+
+<script>
+/* This first part of the script closes/hides the whole signup box, if a visitor clicks on the "x" cross */
+$(document).ready(function () {
+	if (document.cookie.indexOf('mcSignupNewsletter') < 1) {
+		$('#mc_embed_signup').removeClass('hiddenMCsignup');
+	}
+});
+/*
+If a visitor closes the box by clicking on the cross, it saves a cookie for 1 month, so that it doesn't show up again until that time. To change the duration, simple change the numbers. The various numbers represent: days, hours, minutes, seconds and miliseconds. So in order to change it to for example three months, write 90 * 24 * 60 * 60 * 1000.
+*/
+$('#closeBtn').click(function(){
+	var date = new Date();
+	date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+	document.cookie = 'mcSignupNewsletter=1; path=/; expires=' + date.toGMTString();
+	$('#mc_embed_signup').addClass('hiddenMCsignup');
+});
+</script>
+</body>
+</html>
